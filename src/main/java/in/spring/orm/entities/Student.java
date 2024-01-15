@@ -1,15 +1,11 @@
 package in.spring.orm.entities;
-
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student_details")
 public class Student {
 
+    //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "sid")
     private int sid;
@@ -51,5 +47,12 @@ public class Student {
         this.scity = scity;
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sid=" + sid +
+                ", sname='" + sname + '\'' +
+                ", scity='" + scity + '\'' +
+                '}';
+    }
 }
